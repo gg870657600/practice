@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>components</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+	<div id=app>
+	<p>this is my first component demo</p>
+	<p>{{name}}:{{age}}</p>
+<!-- 在子组件中定义prop时，使用了camelCase命名法。由于HTML特性不区分大小写，camelCase的prop用于特性时，需要转为 kebab-case（短横线隔开）myName>my-name -->
+	<my-component v-bind:my-name='name' v-bind:my-age='age'></my-component>
+
+</div>
+	<template id=demo>
+	<p>this is a component ! {{myName}}........{{myAge}}</p>
+	</template>
+</body>
+
+
+
+<script>
+
+	new Vue({
+		el:'#app',
+		data:{
+			name:'chenxi',
+			age:25
+		},
+		components:{
+			'my-component':{
+				template:'#demo',
+				props:['myName','myAge']
+			}
+		}
+	})
+</script>
+</html>

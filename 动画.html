@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transition和animation动画</title>
+	<style type="text/css">
+		.div1{
+			width:200px;
+			height: 200px;
+			background-color: red;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.div1:hover{
+			width:300px;
+			height: 300px;
+			transform:rotate(180deg);
+			-webkit-transform:rotate(180deg); /* Safari and Chrome */
+			transition:transform 1s linear;
+			-webkit-transition: transform 1s;
+			-moz-transition: transform 1s;
+			-o-transition: transform 1s ;
+		}
+		.div2{
+			width:200px;
+			height: 200px;
+			background-color: green;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.div2:hover{
+			animation:xuanzhuan 3s linear infinite;
+			-webkit-animation: xuanzhuan 3s linear infinite;
+		}
+		@keyframes xuanzhuan{
+			0% {transform:rotateY(0deg);}
+			50% {transform:rotateY(180deg);}
+			100% {transform:rotateY(360deg);}
+		}
+		@-webkit-keyframes xuanzhuan{
+			0% {transform:rotateY(0deg);}
+			50% {transform:rotateY(180deg);}
+			100% {transform:rotateY(360deg);}
+		}
+		.btn1{
+			padding:5px 20px;
+			background-color: green;
+			border:1px solid;
+			box-shadow: 5px 5px 15px black;
+		}
+		.btn1:hover{
+			animation:doudong 0.1s linear 3;
+		}
+		@keyframes doudong{
+			0% {transform: translate(0,0);}
+			50% {transform: translate(5px,0);}
+			100% {transform: translate(0,0);}
+		}
+	</style>
+	<script type="text/javascript">
+
+	</script>
+</head>
+<body>
+	<div class="div1">transition动画</div>
+	<div class="div2">animation动画</div>
+	<p>按钮抖动效果: <button class='btn1'>鼠标移动到按钮上</button></p>
+
+</body>
+</html>

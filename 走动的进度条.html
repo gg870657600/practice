@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>progress</title>
+	<script type="text/javascript">
+		function progress(){
+			var progressVal = document.getElementsByTagName('progress')[0].value
+			document.getElementsByTagName('progress')[0].value++
+			console.log('progressVal',progressVal)
+			if(progressVal == 100){
+				return
+			}
+			setTimeout(function(){
+				progress();
+			},500)
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<span>进度条</span>
+		<progress value="0" max="100"></progress>
+		<button onclick="progress()">点击进度条走动</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="count" />
+</body>
+<script type="text/javascript">
+	var num = 0;
+	function startCount(){
+    	document.getElementById("count").value = num;
+    	num += 1;
+    	setTimeout(startCount,1000);    //setTimeout是超时调用，使用递归模拟间歇调用
+	}
+	setTimeout(startCount,1000);    //1s后执行
+</script>
+</html>
+mysql:mkqnwL!Zl3sz

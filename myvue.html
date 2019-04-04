@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>my vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<style type="text/css">
+		.red{
+			width:100px;
+			height: 100px;
+			background-color: red;
+		}
+		.blue{
+			width:100px;
+			height: 100px;
+			background-color: blue;
+		}
+		.kuang{
+			border:1px solid black;
+		}
+	</style>
+</head>
+<body>
+<div id="vue">
+	单位换算：
+	千米<input type="text" v-model="qianmi">
+	米<input type="text" v-model="mi">
+	<br>
+	点击正方形变色：
+	<!-- 点击一次，show从true>false,再点击一次show从false>true v-bind:class不影响公共样式.kung-->
+	<div class="kuang" v-bind:class="{red:!show,blue:show}" v-on:click="show=!show"></div>
+	点击按钮数字+1，到5后循环:
+	<p >{{num}}</p><button v-on:click="addnum">点我+1</button>
+	<br>
+	轮播数字0-5：
+	<p>{{num2}}</p>
+	轮播图：<br>
+	<img v-for="(i,index) in imgs" v-bind:src="i" v-show="index==num3" style="width: 200px;height: 200px">
+	<br>
+	<label>计数:{{num4}}</label>
+</div>
+</body>
+<script type="text/javascript">
+	var myvue = new Vue({
+		el:"#vue",
+		data:{
+			qianmi:0,
+			mi:0,
+			show:true,
+			num:0,
+			num2:0,
+			num3:0,
+			num4:0,
+			imgs:["C:/Users/ghgh/Desktop/后台截图/编辑用户.bmp","C:/Users/ghgh/Desktop/后台截图/分析.bmp","C:/Users/ghgh/Desktop/后台截图/服务.bmp"],
+			lists:[0,1,2]
+		},
+		watch:{
+			qianmi:function(){
+				var val = this.qianmi;
+				this.mi = val * 1000;
+			},
+			mi:function(){
+				var val = this.mi;
+				this.qianmi = val / 1000;
+			}
+		},
+		methods:{
+			addnum:function(){
+				if(this.num==5){
+					this.num=0;
+				}
+				else{this.num++}
+			},
+			//数字轮播
+			play:function(){
+				this.num2++;
+				if(this.num2==6){
+					this.num2=0;
+				}
+			},
+			//图片轮播
+			imgPlay:function(){
+				this.num3++;
+				if (this.num3==this.lists.length){
+					this.num3=0;
+				}
+			},
+			countTime:function(){
+				setInterval(this.play, 2000);
+				setInterval(this.imgPlay, 2000);
+			},
+			//计数
+			count:function(){
+				this.num4 +=1;
+				setTimeout(this.count,1000);
+			}
+		},
+		mounted:function(){      //挂载完成后执行play函数
+			this.countTime();
+		}
+	});
+setTimeout(myvue.count,1000);     //1s后调用myvue对象的count函数
+</script>
+</html>

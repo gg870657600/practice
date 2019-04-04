@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h1>my web page</h1>
+<p>my first exception</p>
+
+<script>
+function myFunction()
+{
+try
+    {
+	var x=document.getElementById("demo").value;
+	if(x=="")     throw "empty";
+	if(isNaN(x))  throw "not a number";
+	if(x<5)       throw "too low";
+	if(x>10)      throw "too high";
+	}
+catch(err)
+    {
+	var y=document.getElementById("mess");
+	y.innerHTML="error:"+err+"!";
+	}
+}
+</script>
+<p>please input a number between 5 and 10 :</p>
+<input id="demo" type="text">
+<button type="button" onclick="myFunction()">text input</button>
+<p id="mess"></p>
+
+</body>
+</html>

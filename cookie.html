@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cookie</title>
+	<script type="text/javascript">
+
+		function setCookie(name,value){
+			var date = new Date();
+			var expireDate = 30;      //过期时间
+			date.setTime(date.getTime() + expireDate*24*60*60*1000);     //将毫秒转化为正常时间
+			document.cookie = name + '=' + escape(value) + ";expires=" + date.toGMTString();
+			var s = document.cookie
+
+
+			document.cookie="username=John Doe; expires=Thu, 18 Dec 2043 12:00:00 GMT; path=/";
+			var x = document.cookie;
+			console.log('ssssssss:',x);
+			alert(s)
+		}
+
+	</script>
+</head>
+<body>
+	<button onclick="setCookie('username','chenxi')">查看设置的cookie</button>
+
+</body>
+</html>

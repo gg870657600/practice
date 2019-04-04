@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>浏览器对象模型</h1>
+<p id="demo1"></p>
+
+<script>
+var h=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight ;
+var w=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth ;
+
+var x = document.getElementById("demo1");
+x.innerHTML='这是浏览器的高度：'+h+'；这是浏览器的宽度：'+w
+
+function winOpen()
+{
+window.open()
+}
+
+function winClose()
+{
+window.close()
+}
+</script>
+
+<button onclick="winOpen()">点击按钮打开新窗口</button> 
+<button onclick="winClose()">点击按钮关闭本窗口</button>
+</body>
+</html>

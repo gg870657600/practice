@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+document.write(location.hostname);
+document.write(location.pathname);
+document.write(location.port);
+document.write(location.portocol);
+document.write(location.href);
+
+function newDoc()
+{
+window.location.assign("http://www.baidu.com")
+}
+
+function getPageViewWidth(){
+    var d = document, a = d.compatMode == "BackCompat"
+            ? d.body
+            : d.documentElement;
+    console.log('22222')
+    return a.clientWidth;  //  可视宽度为clientWidth
+}
+
+</script>
+
+</head>
+<body>
+
+<h1>window location</h1>
+<p id="demo1"></p>
+<input type="button" value="¼ÓÔØÐÂÎÄµµ" onclick="newDoc()">
+
+<button onclick="getPageViewWidth">click</button>
+</body>
+</html>

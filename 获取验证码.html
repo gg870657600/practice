@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var count = 60;
+		function getKey(val){
+			console.log(val.value);
+			if(count != 0){
+				val.value = "重新获取(" + count + ")";
+				count--;
+				val.setAttribute("disabled", true);
+			}else{
+				val.value = "获取验证码";
+				val.removeAttribute("disabled");
+				count = 60;
+				return false;
+			}
+			setTimeout(function(){
+				getKey(val);
+			},1000)
+		}
+	</script>
+</head>
+<body>
+	<input type="text" name="">
+	<input type="button" id="key" value="获取验证码" onclick="getKey(this)">
+</body>
+</html>
