@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<title>响应式布局-first</title>
+
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+			text-decoration: none;
+			list-style: none;
+		}
+		html{
+			font-size:62.5%;
+		}
+		body{
+			/*width:1000px;
+			height: 700px;*/
+			background-color: grey;
+		}
+		header{
+			width:980px;
+			text-align: center;
+			background: blue;
+			font-size:1.5rem;
+			margin:10px auto;
+		}
+		div.content{
+			width:980px;
+			margin:10px auto;
+		}
+		.content2{
+			display: inline-block;
+			width:480px;
+			margin:10px auto;
+		}
+		footer{
+			width:980px;
+			height: 70px;
+			color: white;
+			background-color: black;
+			text-align: center;
+			font-size:1.5rem;
+			margin:10px auto;
+		}
+		img{
+			/*width:100%;*/
+			max-width: 100%;
+			height: auto;
+			margin:0 auto;
+		}
+		/*适配ipad*/
+		@media only screen and (min-width: 768px)and(max-width: 1024px){
+			footer{
+				width:100%;
+				height: 70px;
+				color: white;
+				text-align: center;
+				background-color: red;
+			}
+			header{
+				width:100%;
+				text-align: center;
+				background: green;
+				font-size:1.5rem;
+				margin:10px auto;
+			}
+			div.content{
+				width:100%;
+				margin:10px auto;
+				overflow: hidden;
+			}
+			.content2{
+				display: inline-block;
+				width:100%;
+				margin:10px auto;
+				padding:10px;
+				box-sizing:border-box;
+			}
+		}
+
+		@media screen and (max-width: 768px){
+			footer{
+				width:100%;
+				height: 70px;
+				color: white;
+				text-align: center;
+				background-color: green;
+			}
+			header{
+				width:100%;
+				text-align: center;
+				background: green;
+				font-size:1.5rem;
+				margin:10px auto;
+			}
+			div.content{
+				width:100%;
+				margin:10px auto;
+			}
+			.content2{
+				display: inline-block;
+				width:100%;
+				margin:10px auto;
+				padding:10px;
+				box-sizing:border-box;
+			}
+
+		}
+
+		@media screen and (max-width: 320px){
+			footer{
+				width:100%;
+				height: 70px;
+				color: white;
+				text-align: center;
+				background-color: blue;
+			}
+			header{
+				width:100%;
+				text-align: center;
+				background: green;
+				font-size:1.5rem;
+				margin:10px auto;
+			}
+			div.content{
+				width:100%;
+				margin:10px auto;
+			}
+			.content2{
+				display: inline-block;
+				width:100%;
+				margin:10px;
+				padding:10px;
+				box-sizing:border-box;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<header>响应式布局学习</header>
+		<div class="content">
+		<div class="content2">
+			<img src="https://images2017.cnblogs.com/blog/338235/201712/338235-20171208144351265-1377693778.jpg">
+			<hr />
+			<span>在移动端，仅有四个独立的浏览器内核，分别为微软的Trident、火狐的Gecko、开源内核Webkit、Opera的Presto。
+			目前微软的Trident在移动终端上主要为WP7、8系统内置浏览器。Opera的Presto内核主要为 Opera Mobile、OperaMini、欧朋浏览器以及欧朋HD Beta版。Webkit内核的适用范围则较为广泛，Android原生浏览器、苹果的Safari、谷歌Chrome(Android4.0使用)都是基于Webkit开源内核开发的。</span>
+		</div>
+		<div class="content2">
+			<span>移动前端中常说的 viewport （视口）就是浏览器中用于呈现网页的区域。视口通常并不等于屏幕大小，特别是可以缩放浏览器窗口的情况下。手机端与PC端视口存在差异，电脑端的视口宽度等于分辨率，而移动端的视口宽度跟分辨率没有关系,宽度默认值是设备厂家指定的。iOS, Android基本都将这个视口分辨率设置为 980px。</span>
+
+			<hr />
+			<img src="https://images2017.cnblogs.com/blog/338235/201712/338235-20171208144351265-1377693778.jpg">
+			<hr />
+			<span>1.为什么手机端视口要设为980px?</span>
+
+			<span>当年乔布斯设想：苹果手机如果在市场上火爆了，但是各个网站还没有来得及制作手机端网页，那么用户不得不用手机访问电脑版的网页，如何用小屏幕访问大屏幕的页面也同样可读呢？乔帮主就想着为手机固定一个视口宽度，让手机的视口宽度等于世界上绝大多数PC网页的版心宽度，就是980px。这样，用手机访问电脑版网页的时候，旁边刚好没有留白。不过页面缩放后文字会变得非常小，用户需要手动放大缩小才能看清楚，体验非常差。</span>
+		</div>
+		</div>
+		<footer>这是一个footer</footer>
+	</div>
+</body>
+</html>
